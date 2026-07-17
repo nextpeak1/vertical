@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Silence</title>
+    <!-- Absolute Security: No external dependencies, fully self-contained styles -->
+    <style>
+        :root {
+            --bg-color: #0b0c10;
+            --text-color: #f4f4f6;
+            --accent-color: #a5a5a7;
+            --line-color: rgba(244, 244, 246, 0.12);
+            --peak-color: rgba(244, 244, 246, 0.85);
+            --shadow-color: rgba(244, 244, 246, 0.25);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        main {
+            text-align: center;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        p {
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent-color);
+        }
+
+        /* Hero Vector Graphics Container */
+        .vector-container {
+            width: 320px;
+            height: 320px;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Continuous drifting wind lines */
+        .wind-line {
+            stroke: var(--line-color);
+            stroke-dasharray: 60 140;
+            stroke-dashoffset: 0;
+            animation: drift 10s linear infinite;
+        }
+
+        .wind-line-fast {
+            stroke: var(--line-color);
+            stroke-dasharray: 40 160;
+            animation: drift 7s linear infinite;
+        }
+
+        /* Mountain Peak - subtle, breathing idle motion */
+        .mountain {
+            transform-origin: 160px 240px;
+            animation: subtle-sway 12s ease-in-out infinite;
+        }
+
+        /* Pure CSS Animations */
+        @keyframes drift {
+            0% {
+                stroke-dashoffset: 400;
+            }
+            100% {
+                stroke-dashoffset: -400;
+            }
+        }
+
+        @keyframes subtle-sway {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+
+        /* Minimal contact footer */
+        footer {
+            margin-top: 3rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="vector-container">
+        <!-- SVG Vector Graphic with CSS Keyframe Motion -->
+        <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+            
+            <!-- Wind Currents (Blowing smoothly left-to-right behind/around the peak) -->
+            <path class="wind-line" d="M -40,120 Q 80,110 160,130 T 360,110" fill="none" stroke-width="1.5"/>
+            <path class="wind-line-fast" d="M -40,160 Q 100,180 180,150 T 360,170" fill="none" stroke-width="1.2"/>
+            <path class="wind-line" d="M -40,210 Q 60,200 150,220 T 360,195" fill="none" stroke-width="1.5"/>
+            <path class="wind-line-fast" d="M -40,80 Q 120,60 200,90 T 360,70" fill="none" stroke-width="1"/>
+
+            <!-- The Mountain Peak (Geometric, Stark Minimalism) -->
+            <g class="mountain">
+                <!-- Shadowed Right Side of Peak -->
+                <polygon points="160,80 240,240 160,240" fill="none" stroke="var(--shadow-color)" stroke-width="1" />
+                <!-- Lit Left Side / Main Crest -->
+                <polygon points="160,80 80,240 160,240" fill="none" stroke="var(--peak-color)" stroke-width="1.5" />
+                
+                <!-- Ridge/Crease Line down the middle -->
+                <line x1="160" y1="80" x2="160" y2="240" stroke="var(--peak-color)" stroke-width="1.5" />
+            </g>
+            
+        </svg>
+    </div>
+
+    <main>
+        <h1>Vertical Silence</h1>
+        <p></p>
+    </main>
+
+    <footer>
+    </footer>
+
+</body>
+</html>
