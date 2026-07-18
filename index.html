@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Description -->
+    <meta name="description" content="Vertical Silence - Stark minimalism and geometric mountain peaks.">
+    
+    <!-- Strict Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; img-src 'self' data:; script-src 'none';">
+
     <title>Vertical Silence</title>
     <!-- Absolute Security: No external dependencies, fully self-contained styles -->
     <style>
@@ -128,8 +135,9 @@
 <body>
 
     <div class="vector-container">
-        <!-- SVG Vector Graphic with CSS Keyframe Motion -->
-        <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+        <!-- SVG Vector Graphic with CSS Keyframe Motion and Accessibility -->
+        <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="svg-title">
+            <title id="svg-title">Minimalist geometric mountain peak with drifting wind lines</title>
             
             <!-- Wind Currents (Blowing smoothly left-to-right behind/around the peak) -->
             <path class="wind-line" d="M -40,120 Q 80,110 160,130 T 360,110" fill="none" stroke-width="1.5"/>
@@ -153,11 +161,15 @@
 
     <main>
         <h1>Vertical Silence</h1>
-        <p></p>
+        <!-- Commented out until populated -->
+        <!-- <p></p> -->
     </main>
 
+    <!-- Commented out until populated -->
+    <!--
     <footer>
     </footer>
+    -->
 
 </body>
 </html>
